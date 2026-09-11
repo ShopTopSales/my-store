@@ -728,9 +728,9 @@ background-attachment: fixed;
 
 const products = [
 
-  {
+    {
+    id: "product1",
     name: "Black Essentials Sweatpant",
-
     price: 68.99,
 
     description:
@@ -743,9 +743,9 @@ const products = [
   },
 
 
-  {
+    {
+    id: "product2",
     name: "Grey Essentials Sweatpant",
-
     price: 68.99,
 
     description:
@@ -758,9 +758,9 @@ const products = [
   },
 
 
-  {
+    {
+    id: "product3",
     name: "Coral Essentials Sweatpant",
-
     price: 68.99,
 
     description:
@@ -2397,16 +2397,15 @@ updateCart();
 
   const oldAddToCart = addToCart;
 
+addToCart = function(id, name, price) {
 
-  addToCart = function(name, price) {
-
-    oldAddToCart(name, price);
+    oldAddToCart(id, name, price);
 
     saveCurrentCart();
 
     updateAccountDisplay();
 
-  };
+};
 
 
   /* =========================
@@ -3039,51 +3038,6 @@ async function confirmPurchase() {
         );
     }
 }
-
-
-  /* CARD NUMBER FORMATTING */
-
-  document
-    .getElementById("card-number")
-    .addEventListener("input", function(e) {
-
-      let value =
-        e.target.value
-          .replace(/\D/g, "")
-          .substring(0, 16);
-
-      value =
-        value.match(/.{1,4}/g)?.join(" ")
-        || "";
-
-      e.target.value = value;
-
-    });
-
-
-  /* EXPIRATION FORMATTING */
-
-  document
-    .getElementById("card-expiry")
-    .addEventListener("input", function(e) {
-
-      let value =
-        e.target.value
-          .replace(/\D/g, "")
-          .substring(0, 4);
-
-      if (value.length >= 3) {
-
-        value =
-          value.substring(0, 2) +
-          " / " +
-          value.substring(2);
-
-      }
-
-      e.target.value = value;
-
-    });
 
 
 </script>
