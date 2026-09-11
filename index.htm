@@ -156,7 +156,7 @@ background-attachment: fixed;
 
         <span class="price">$68.99</span>
 
-        <button onclick="event.stopPropagation(); addToCart('Black Essentials Sweatpant', 68.99)">
+        <button onclick="event.stopPropagation(); addToCart('product1', 'Black Essentials Sweatpant', 68.99)">
           Add to Cart
         </button>
 
@@ -183,7 +183,7 @@ background-attachment: fixed;
 
         <span class="price">$68.99</span>
 
-        <button onclick="event.stopPropagation(); addToCart('Grey Essentials Sweatpant', 68.99)">
+        <button onclick="event.stopPropagation(); addToCart('product2', 'Grey Essentials Sweatpant', 68.99)">
           Add to Cart
         </button>
 
@@ -210,7 +210,7 @@ background-attachment: fixed;
 
         <span class="price">$68.99</span>
 
-        <button onclick="event.stopPropagation(); addToCart('Coral Essentials Sweatpant', 68.99)">
+        <button onclick="event.stopPropagation(); addToCart('product3', 'Coral Essentials Sweatpant', 68.99)">
           Add to Cart
         </button>
 
@@ -1435,10 +1435,10 @@ document.addEventListener(
 
   // ADD PRODUCT
 
-  function addToCart(name, price) {
+  function addToCart(id, name, price) {
 
     const existingProduct = cart.find(
-      item => item.name === name
+      item => item.id === id
     );
 
     if (existingProduct) {
@@ -1448,10 +1448,11 @@ document.addEventListener(
     } else {
 
       cart.push({
-        name: name,
-        price: price,
-        quantity: 1
-      });
+    id: id,
+    name: name,
+    price: price,
+    quantity: 1
+});
 
     }
 
