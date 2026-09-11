@@ -1,2 +1,2 @@
-# my-store
+# Shop Top Sales
 Shop Top Sales
