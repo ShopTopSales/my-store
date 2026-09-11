@@ -907,9 +907,10 @@ function renderProduct() {
   addButton.onclick = function() {
 
     addToCart(
-      product.name,
-      product.price
-    );
+    product.id,
+    product.name,
+    product.price
+);
 
   };
 
@@ -1433,33 +1434,27 @@ document.addEventListener(
   let cart = [];
 
 
-  // ADD PRODUCT
-
-  function addToCart(id, name, price) {
+// ADD PRODUCT
+function addToCart(id, name, price) {
 
     const existingProduct = cart.find(
-      item => item.id === id
+        item => item.id === id
     );
 
     if (existingProduct) {
-
-      existingProduct.quantity++;
-
+        existingProduct.quantity++;
     } else {
-
-      cart.push({
-    id: id,
-    name: name,
-    price: price,
-    quantity: 1
-});
-
+        cart.push({
+            id: id,
+            name: name,
+            price: price,
+            quantity: 1
+        });
     }
 
     updateCart();
-
     openCart();
-  }
+}
 
 
   // UPDATE CART
