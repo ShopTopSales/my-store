@@ -2588,6 +2588,56 @@ addToCart = function(id, name, price) {
 
 
 
+        <!-- =========================
+             ORDER SUMMARY
+        ========================= -->
+
+        <div class="order-summary">
+
+          <h3>Your Order</h3>
+
+          <div id="checkout-items">
+            <!-- Cart items will appear here -->
+          </div>
+
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="checkout-subtotal">$0.00</span>
+          </div>
+
+          <div class="summary-line">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+
+          <div class="summary-line total">
+            <span>Total</span>
+            <span id="checkout-total">$0.00</span>
+          </div>
+
+          <button
+            class="confirm-purchase"
+            onclick="confirmPurchase()">
+
+            Continue to Payment
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     CHECKOUT CSS
+========================= -->
+
 
 
 
